@@ -154,6 +154,7 @@ class InstallController extends Controller
             return redirect('step5');
         } catch (\Exception $exception) {
             print_r($exception);
+            die();
             session()->flash('error', 'Check your database permission!');
             return back();
         }
