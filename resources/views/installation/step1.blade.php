@@ -51,6 +51,9 @@
                 </ul>
 
                 <p class="text-center pt-3">
+                    {{ $permission['curl_enabled']; }}
+                    {{ $permission['db_file_write_perm']; }}
+                    {{ $permission['routes_file_write_perm']; }}
                     @if ($permission['curl_enabled'] == 1 && $permission['db_file_write_perm'] == 1 && $permission['routes_file_write_perm'] == 1 && $phpVersion >= 7.20)
                         <a href="{{ route('step2',['token'=>bcrypt('step_2')]) }}" class="btn btn-info">Next <i class="fa fa-forward"></i></a>
                     @endif
