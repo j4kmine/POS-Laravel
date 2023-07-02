@@ -153,6 +153,7 @@ class InstallController extends Controller
             DB::unprepared(file_get_contents($sql_path));
             return redirect('step5');
         } catch (\Exception $exception) {
+            print_r($exception);
             session()->flash('error', 'Check your database permission!');
             return back();
         }
